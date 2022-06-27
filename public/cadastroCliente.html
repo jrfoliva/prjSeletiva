@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" >
+        <h1 class=" m-3 text-center">Cadastro de Cliente</h1>
+        <form style="border: 1px solid; border-radius: 5px; padding: 20px;">
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-2">
+                    <label for="id">Código:</label>
+                    <input class="form-control" type="text" name="id" id="id" disabled readonly>    
+                </div>
+                <div class="col-4">
+                    <label for="nome">Nome completo:</label>
+                    <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o seu nome..." required>    
+                </div>
+                <div class="col-2">
+                    <label for="rg">RG:</label>
+                    <input type="text" name="rg" id="rg" class="form-control" maxlength="12">
+                </div>
+                <div class="col-2">
+                    <label for="cpf">CPF:</label>
+                    <input class="form-control" type="text" name="cpf" id="cpf" placeholder="999.999.999-99"
+                    onkeypress="mCpf()" onblur="validarCPF()" maxlength="14" required>
+                </div>
+                <div class="col-2">
+                    <label for="dtNasc">Nascimeto:</label>
+                    <input class="form-control" type="date" name="dtNasc" id="dtNasc" required>
+                </div>
+                <div class="col-2">
+                    <label for="cep">CEP:</label>
+                    <input type="text" name="cep" id="cep" class="form-control" placeholder="99999-99" maxlength="10"
+                    onkeypress="mCEP()" onblur="pesquisacep(this.value)">
+                </div>
+                <div class="col-4">
+                    <label for="endereco">Endereço:</label>
+                    <input class="form-control" type="text" name="endereco" id="endereco" placeholder="Rua dos ..." required>
+                </div>
+                <div class="col-2">
+                    <label for="numero">Número:</label>
+                    <input class="form-control" type="number" name="numero" id="numero" placeholder="Nº" min="1" required>
+                </div>
+                <div class="col-4">
+                    <label for="complemento">Complemento:</label>
+                    <input class="form-control" type="text" name="complemento" id="complemento">
+                </div>
+                <div class="col-4">
+                    <label for="bairro">Bairro:</label>
+                    <input class="form-control" type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+                </div>
+                <div class="col-4">
+                    <label for="cidade">Cidade:</label>
+                    <select name="cidade" id="cidade" class="form-control" required>
+                        <option selected>...</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="nome@exemplo.com" required onblur="validarEmail()">  
+                    <div class="invalid-feedback">
+                        Por favor, informe um email válido!
+                      </div>
+                </div>
+                <div class="col-4">
+                    <label for="contato">Contato:</label>
+                    <input class="form-control" type="text" name="contato" id="contato" placeholder="(99) 99999-9999"
+                    onkeydown="mascara('(##) #####-####', this, event)">
+                </div>
+                <div class="col-12">
+                    <label for="observacao">Observação:</label>
+                    <textarea class="form-control" name="observacao" id="observacao" cols="30" rows="3"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-success" id="botaoGravar">Gravar</button>
+                    <button type="button" class="btn btn-info" id="botaoAtualizar" disabled>Atualizar</button>
+                    <button type="reset" class="btn btn-warning" id="botaoCancelar">Cancelar</button>
+                    <a href="paginaPrincipal.html">
+                        <button type="button" class="btn btn-secondary" id="botaoCancelar">Voltar</button>
+                    </a>
+                </div>
+                <br>
+            </div>
+            <br>
+            <div data-Mensagem>
+
+            </div>    
+        </form>
+        <div data-Tabela>
+
+        </div>
+
+        <footer>
+            <div class="card text-center">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h5 class="card-title">VetCare Clínica Veterinária</h5>
+                    <p class="card-text">Vision Softwares &copy;2022 - (Curso EAD Análise e Desenvolvimento de Sistemas - UNOESTE)</p>
+                </div>
+                <div class="card-footer text-muted"></div>
+            </div>
+        </footer>          
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./scripts/aplicaMasc.js"></script>
+<script src="./scripts/buscaCep.js"></script>
+<script src="./scripts/scriptCliente.js"></script>
+</html>

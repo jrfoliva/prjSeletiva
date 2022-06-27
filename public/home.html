@@ -1,0 +1,81 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+        <title>SGC - Sistema Gestor de Contêiner</title>
+        <style>
+            html, body{
+                height: 100%;
+
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            header {
+                background-color: rgb(51, 133, 216);
+                padding-top: 20px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: white;
+                text-align: center;
+            }
+            section {
+                flex: 1 0 auto;
+            }
+            footer {
+                flex-shrink: 0;
+                font-size: medium;
+                background-color: rgba(80, 76, 76, 0.815);
+                color: whitesmoke;
+                height: 8%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h2>Sistema Gestor de Contêiner</h2></header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html">Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Gerenciar
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" onclick="carregar('gerConteiner.html')">Contêineres</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" onclick="carregar('gerMovimentacao.html')">Movimentações</a></li>
+                            </ul>
+                        </li>
+                    <div class="d-flex">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="home.html">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section id="conteudo">
+            
+        </section>
+        <footer>
+            Teste para seletiva - Candidato: Junior Freire Oliva
+        </footer>
+        <script>
+            function carregar(pagina){
+                $("#conteudo").load(pagina);
+            }
+        </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>

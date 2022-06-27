@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Movimentações</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" >
+        <h4 class=" m-3 text-center" style="color:silver;">Informações da Movimentação</h4>
+        <form style="border: 1px solid; border-radius: 5px; padding: 20px;">
+            <div class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-2">
+                    <label for="id">Id:</label>
+                    <input class="form-control" type="text" name="id" id="id" disabled readonly>    
+                </div>
+                <div class="col-2">
+                    <label for="conteinerId">Conteiner:</label>
+                    <select name="conteinerId" id="conteinerId" class="form-control" required>
+                        <option value="" selected>...</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="clienteId">Cliente:</label>
+                    <select name="clienteId" id="clienteId" class="form-control" disabled>
+                        <option value="" selected></option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="tipo">Tipo de Movimentação:</label>
+                    <select name="tipo" id="tipo" class="form-control" required>
+                        <option value="" selected>...</option>
+                        <option value="DESCARGA">DESCARGA</option>
+                        <option value="EMARQUE">EMBARQUE</option>
+                        <option value="GATE IN">GATE IN</option>
+                        <option value="GATE OUT">GATE OUT</option>
+                        <option value="PESAGEM">PESAGEM</option>
+                        <option value="REPOSICIONAMENTO">REPOSICIONAMENTO</option>
+                        <option value="SCANNER">SCANNER</option>
+                    </select>
+                </div>
+                <div class="row-cols-lg-auto">
+                    <label for="dtHrInicio">Data e Hora Inicial:</label>
+                    <input type="datetime-local" name="dtHrInicio" id="dtHrInicio" class="form-control"  required>
+                </div>
+                <div class="row-cols-lg-auto">
+                    <label for="dtHrFim">Data e Hora Final:</label>
+                    <input type="datetime-local" name="dtHrFim" id="dtHrFim" class="form-control" required>
+                </div>
+                <div class="col-12 text-center" style="padding-top:100px;">
+                    <button type="button" class="btn btn-success" id="botaoGravar">Gravar</button>
+                    <button type="button" class="btn btn-info" id="botaoAtualizar" disabled>Atualizar</button>
+                    <button type="reset" class="btn btn-warning" id="botaoCancelar">Cancelar</button>
+                    <a href="home.html">
+                        <button type="button" class="btn btn-secondary" id="botaoCancelar">Voltar</button>
+                    </a>
+                </div>
+                <br>
+            </div>
+            <br>
+            <div data-Mensagem>
+            </div>    
+        </form>
+        <div data-Tabela>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./scripts/scriptMovimentacao.js"></script>
+</html>

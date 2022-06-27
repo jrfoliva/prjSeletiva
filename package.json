@@ -1,0 +1,22 @@
+{
+  "name": "minhavaga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Junior Freire Oliva",
+  "license": "ISC",
+  "dependencies": {
+    "@types/pdfmake": "^0.1.21",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "pdfmake": "^0.2.5",
+    "sequelize": "^6.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
